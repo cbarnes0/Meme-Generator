@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+}
+
+:root {
+    --lightblue: #ADD8E6;
+    --black: #000000;
+}
+
+#header {
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: var(--lightblue);
+    padding: 50px;
+}
+
+#title-heading {
+    align-items: center;
+    text-align: center;
+    color: var(--black);
+}
+
+.main-content {
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    text-align: center;
+}
+
+#text-input {
+    margin-top: 50px;;
+    align-items: center;
+    text-align: center;
+}
+
+#enter-input {
+    align-items: center;
+    text-align: center;
+}
+ 
