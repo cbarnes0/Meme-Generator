@@ -12,7 +12,7 @@
     text-align: center;
     color: white;
     background-color: var(--lightblue);
-    padding: 50px;
+    padding: 10px;
 }
 
 #title-heading {
@@ -23,7 +23,7 @@
 
 .main-content {
     display: flex;
-    margin-top: 50px;
+    margin-top: 20px;
     align-items: center;
     text-align: center;
 }
@@ -40,4 +40,21 @@
 }
  
 /* imgcontainer */
+
+/* Carson - ISSUE: Meme sizes were not uniform. SOLVED: I added a width to the
+memeContainer id and a border. This border helped me realize the white space in some of the 
+images that was throwing us off. Tied to this containter is its child the meme img.
+I used max height and width to have it fill its parent container and used flex to center the
+image within it. */
+#memeContainer {
+    width: 800px;
+    border: 5px solid black; 
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 

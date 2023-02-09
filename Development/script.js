@@ -17,8 +17,8 @@ fetch('https://api.imgflip.com/get_memes')
 				displayMeme(memes, currentMemeIndex);
 			} else if (event.key === "ArrowRight") {
 				currentMemeIndex++;
-				if (currentMemeIndex >= memes.length) {
-					currentMemeIndex = 0;
+					if (currentMemeIndex >= memes.length) {
+				 	currentMemeIndex = 0;
 				}
 				displayMeme(memes, currentMemeIndex);
 			}
