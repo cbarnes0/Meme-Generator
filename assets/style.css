@@ -1,18 +1,35 @@
+:root {
+    --lightblue: #ADD8E6;
+    --black: #000000;
+    --rainbow-gradient: linear-gradient(-90deg,#adfbda 0,#35c3ff 30%,#fda399 50%,#76d880 70%,#ebf38b 90%,#adfbda 100%);
+}
+
 * {
     margin: 0;
 }
 
-:root {
-    --lightblue: #ADD8E6;
-    --black: #000000;
+body {
+    background-color: #162c35;
 }
 
 #header {
+    margin: 5px;
     align-items: center;
     text-align: center;
-    color: white;
-    background-color: var(--lightblue);
-    padding: 50px;
+    /* color: white; */
+    /* background-color: var(--lightblue); */
+    padding: 10px;
+}
+
+h1, h4 {
+    background-image: var(--rainbow-gradient,#fff);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 2rem #000);
+    text-shadow: none!important;
 }
 
 #title-heading {
@@ -23,25 +40,144 @@
 
 .main-content {
     display: flex;
-    margin-top: 50px;
-}
-
-#text-input {
-    margin-top: 50px;
+    margin: 5px;
     align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
+/* #text-input {
+    margin-top: 50px;;
+    align-items: center;
+    text-align: center;
+}
 #enter-input {
     align-items: center;
     text-align: center;
-}
-
-#history-title {
-    text-align: center;
-    vertical-align: center;
-    border-bottom: 3px solid var(--black);
-}
+} */
  
-/* imgcontainer */
+/* Carson - ISSUE: Meme sizes were not uniform. SOLVED: I added a width to the
+memeContainer id and a border. This border helped me realize the white space in some of the 
+images that was throwing us off. Tied to this containter is its child the meme img.
+I used max height and width to have it fill its parent container and used flex to center the
+image within it. */
+#memeContainer {
+    display: flex; 
+    justify-content: center;
+    width: 600px;
+    /* border: 5px solid black; */
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+/* ADVICE API BOX */
+#advice-card {
+    margin: 5px;
+    /* display: block; */
+    text-align: center;
+    /* border: 5px black solid; */
+}
+
+/* #extra-space {
+    border: black solid 5px;
+} */
+
+#quote-box {
+    /* margin: 50px;
+    padding: 10px; */
+    /* border: black solid 5px; */
+    /* width: 800px; */
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+#quote-box p {
+    margin-top: 5px;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+}
+
+#button-box {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* border: black solid 5px; */
+    /* width: 800px; */
+    height: 200px;
+}
+#button-box button {
+    display: flex;
+    justify-content: center;
+}
+
+/* MODAL */
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+	visibility: hidden;
+	backface-visibility: hidden;
+    opacity: 0;
+    transition: opacity .15s ease-in-out; 
+}
+.modal-open {
+    visibility: visible;
+  	backface-visibility: visible;  
+    opacity: 1;
+    z-index: 1;
+}  
+.modal-inner {
+    position: relative;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    color: var(--lightblue);
+    background-color: #20404d;
+    max-width: 50em;
+    padding: 1em 1.5em;
+    position: relative;
+    text-align: center;
+    margin: 2em;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+}
+.modal-close-icon {
+    position: absolute;
+    right: 1.5em;
+}      
+.modal-content-inner {
+    padding-right: 2em;
+}
+.modal-buttons-seperator {
+    margin: 1.5em 0;
+    margin-top: 0;
+}
+.modal-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;  
+}
+button {
+    margin-left: 1em;
+} 
+button:first-child {
+    margin-left: 0;
+}
