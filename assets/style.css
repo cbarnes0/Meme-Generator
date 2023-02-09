@@ -24,12 +24,10 @@
 .main-content {
     display: flex;
     margin-top: 50px;
-    align-items: center;
-    text-align: center;
 }
 
 #text-input {
-    margin-top: 50px;;
+    margin-top: 50px;
     align-items: center;
     text-align: center;
 }
@@ -37,6 +35,12 @@
 #enter-input {
     align-items: center;
     text-align: center;
+}
+
+#history-title {
+    text-align: center;
+    vertical-align: center;
+    border-bottom: 3px solid var(--black);
 }
  
 /* imgcontainer */
