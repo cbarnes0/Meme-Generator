@@ -2,6 +2,11 @@
 
 let currentMemeIndex = 0;
 
+// Search History Array
+let savedHistory = [];
+
+let quoteData = [];
+
 fetch('https://api.imgflip.com/get_memes')
 	.then(response => response.json())
 	.then(response => {
@@ -33,18 +38,83 @@ function displayMeme(memes, index) {
 
 // Search History Function for Memes
 
+// FUnction to save memes to local storage
+let saveHistoryData = function (memes) {
+
+	// if statement to display saved item in save history list unless if it has already been saved
+	if(!savedHistory.includes(memes)){
+		savedHistory.push(memes);
+		$("#search-history").append("<a href='#' id='" + memes + "'>" + memes + "</a>")
+	}
+
+	// Saves saved history data to local storage
+	localStorage.setItem("savedHistoryData", JSON.stringify(savedHistory));
+
+	// Saves quote data to storage
+	localStorage.setItem("quoteData", JSON.stringify(quoteData));
+
+	// Displays previously saved data
+	loadHistoryData();
+};
+
+// FUnction to display to load saved data
+let loadHistoryData = function () {
+
+	// Retrieves saved data from local storage
+	savedHistory = JSON.parse(localStorage.getItem("savedHistoryData"));
+
+	// Retireves te quote data from local storage
+	quoteData = JSON.parse(localStorage.getItem("quoteData"));
+
+	// if no data is present then creates empty array
+	if (!savedHistory) {
+        savedHistory = []
+    }
+
+    if (!quoteData) {
+        quoteData = []
+    }
+
+	// Clears any previous data from the saved history unordered list
+	$("#search-history").empty();
+
+	 // Converts the displayed meme in saved history to link to pull data from storage if clicked
+    // Append to unordered list
+	for(i = 0 ; i < savedHistory.length ;i++) {
+
+        $("#search-history").append("<a href='#' id='" + savedHistory[i] + "'>" + savedHistory[i] + "</a>");
+    }
+};
+
+// Save Button?
+// $("#search-form").submit(formSubmit);
+
+// Event Handlers
+$("#search-history").on("click", function(event){
+
+	// Retrieves links value from id
+    let pastMeme = $(event.target).closest("a").attr("id");
+
+	// Pushes id's link value to displayMeme function
+    displayMeme(pastMeme);
+});
+
+
+
+// Weather Dashboard Functions
+
 /* // Function to save the city searched in form to local storage
 let saveHistoryData = function (city) {
 
     // if statement stating that if the the search history below the search bar does not inslude the city searched then it should load beneath if
     // if the city is already present then no need to add again
-    if(!searchHistory.includes(city)){
-        searchHistory.push(city);
+    if(!savedHistory.includes(city)){
+        savedHistory.push(city);
         $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + city + "'>" + city + "</a>")
     } 
 
-    // Saves searchHistory array to local storage
-    localStorage.setItem("searchHistoryData", JSON.stringify(searchHistory));
+    // Saves savedHistory array to local storage
+    localStorage.setItem("savedHistoryData", JSON.stringify(savedHistory));
 
     // Saves city data to local storage
     localStorage.setItem("cityData", JSON.stringify(cityData));
@@ -57,13 +127,13 @@ let saveHistoryData = function (city) {
 let loadHistoryData = function() {
 
     // Retrieves search history data from local storage
-    searchHistory = JSON.parse(localStorage.getItem("searchHistoryData"));
+    savedHistory = JSON.parse(localStorage.getItem("savedHistoryData"));
     // Retrieves the city name data from local storage
     cityData = JSON.parse(localStorage.getItem("cityData"));
   
     // If not data is present then this creates an empt array
-    if (!searchHistory) {
-        searchHistory = []
+    if (!savedHistory) {
+        savedHistory = []
     }
 
     if (!cityData) {
@@ -74,12 +144,12 @@ let loadHistoryData = function() {
     $("#search-history").empty();
 
     // For loop that runs through the cities avilable in the city data of openweather api
-    for(i = 0 ; i < searchHistory.length ;i++) {
+    for(i = 0 ; i < savedHistory.length ;i++) {
 
 
         // Converts the display city name in search history to link to pull data from storage if clicked
         // Append to unordered list
-        $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + searchHistory[i] + "'>" + searchHistory[i] + "</a>");
+        $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + savedHistory[i] + "'>" + savedHistory[i] + "</a>");
     }
   };
 
