@@ -7,7 +7,7 @@ fetch('https://api.imgflip.com/get_memes')
 	.then(response => {
 		const memes = response.data.memes;
 		displayMeme(memes, currentMemeIndex);
-
+        // Adding eventlistener for arrow key left and right //
 		document.addEventListener("keydown", function(event) {
 			if (event.key === "ArrowLeft") {
 				currentMemeIndex--;
