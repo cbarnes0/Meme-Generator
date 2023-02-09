@@ -6,10 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link rel="stylesheet" href="./assets/style.css"/>
     <link rel="stylesheet" href="./assets/skeleton.css"/>
-    <script
-  src="https://code.jquery.com/jquery-3.6.3.js"
-  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-  crossorigin="anonymous"></script>
     <title>Meme Generator</title>
 </head>
 
@@ -28,21 +24,10 @@
     </div>
 
     <main>
-
-            <section class="row">
-                <div class="twelve columns">
-                    <h1 id="title-heading" class="u-max-full-width">Title</h1>
-                </div>
-            </section>
-
             <section class="row">
                 <div class="main-content">
                     <div class="six columns">
-                        <!-- Style to be centered and similar to Weather Dashboard -->
-                        <div>
-                            <h2 id="history-title">Former Dank Memes</h2>
-                            <ul id="search-history"></ul>
-                        </div>
+                        <button>Previous</button>
                     </div>
                     <!-- img -->
                     <div class="six columns imgHolder" id="memeContainer">
@@ -50,43 +35,54 @@
                         <img id="memeImage" src="" alt="Meme">
                     </div>
                     <div class="six columns">
-                        <button>Save</button>
+                        <button>Next</button>
                     </div>
                 </div>
             </section>
 
             <section class="row" id="advice-card">
-                    <div class="main-content">
-                        <!-- <div class="u-max-full-width"> -->
-                            <div class="three columns" id="extra-space">
-                            </div>
-                            <div class="three columns" id="quote-box">
-                                <p id="quote-box-text"></p>
-                            </div>
-                            <div class="three columns" id="button-box">
-                                <button class="button-primary" id="generate-text">Generate Text</button>
-                            </div>
-                        <!-- </div> -->
-                    </div>
-                <!-- <div class="u-max-full-width">
-                    <div id="text-input" class="twelve columns">
-                        <input type="text">
-                    </div>
-                    <div id="enter-input" class="twelve columns">
-                        <button class="button-primary">Enter</button>
-                    </div>
-                </div> -->
-            </section>
+                <div class="main-content">
+                    <!-- <div class="u-max-full-width"> -->
+                        <div class="three columns" id="extra-space">
+                        </div>
+                        <div class="three columns" id="quote-box">
+                            <p id="quote-box-text"></p>
+                        </div>
+                        <div class="three columns" id="button-box">
+                            <button class="button-primary" id="generate-text">Generate Text</button>
+                        </div>
+                    <!-- </div> -->
+                </div>
+                </section>
         </div>
+
+        <!-- MODAL -->
+        <!-- <div class="modal modal-open">
+            <div class="modal-inner">
+              <div class="modal-content">
+                <div class="modal-close-icon">
+                  <a href="javascript:void(0)" class="close-modal"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+                <div class="modal-content-inner">
+                  <h4>Welcome to the Rebooters Meme Generator</h4>
+                  <p> The following application is meant to create laughable combinations of images and advice quotes. Our goal is to do as much as possible with the technologies we know and 
+                    continue to further develop the project in the future. Our future goal is for 'Meme Generator' to be a funcitoning Meme API with downloadable images. Enjoy! </p>  
+                </div>
+                <hr class="modal-buttons-seperator">
+                <div class="modal-buttons">
+                  <button class="button close-modal">Cancel</button>
+                  <button class="button button-primary close-modal">OK</button>
+                </div>
+              </div>
+            </div> -->
     </main>
 
     <footer>
-
     </footer>
 
-<script src="./Development/script.js">
 
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./Development/script.js"></script>
 </body>
 
 
