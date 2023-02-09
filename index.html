@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link rel="stylesheet" href="./assets/style.css"/>
     <link rel="stylesheet" href="./assets/skeleton.css"/>
+    <script
+  src="https://code.jquery.com/jquery-3.6.3.js"
+  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+  crossorigin="anonymous"></script>
     <title>Meme Generator</title>
 </head>
 
@@ -46,20 +50,32 @@
                         <img id="memeImage" src="" alt="Meme">
                     </div>
                     <div class="six columns">
-                        <button>Next</button>
+                        <button>Save</button>
                     </div>
                 </div>
             </section>
 
-            <section class="row">
-                <div class="u-max-full-width">
+            <section class="row" id="advice-card">
+                    <div class="main-content">
+                        <!-- <div class="u-max-full-width"> -->
+                            <div class="three columns" id="extra-space">
+                            </div>
+                            <div class="three columns" id="quote-box">
+                                <p id="quote-box-text"></p>
+                            </div>
+                            <div class="three columns" id="button-box">
+                                <button class="button-primary" id="generate-text">Generate Text</button>
+                            </div>
+                        <!-- </div> -->
+                    </div>
+                <!-- <div class="u-max-full-width">
                     <div id="text-input" class="twelve columns">
                         <input type="text">
                     </div>
                     <div id="enter-input" class="twelve columns">
                         <button class="button-primary">Enter</button>
                     </div>
-                </div>
+                </div> -->
             </section>
         </div>
     </main>
@@ -71,7 +87,6 @@
 <script src="./Development/script.js">
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 

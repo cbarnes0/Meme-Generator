@@ -36,138 +36,83 @@ function displayMeme(memes, index) {
 	memeContainer.innerHTML = `<img src="${memes[index].url}" alt="Meme">`;
 }
 
-// Search History Function for Memes
-
-// FUnction to save memes to local storage
-let saveHistoryData = function (memes) {
-
-	// if statement to display saved item in save history list unless if it has already been saved
-	if(!savedHistory.includes(memes)){
-		savedHistory.push(memes);
-		$("#search-history").append("<a href='#' id='" + memes + "'>" + memes + "</a>")
-	}
-
-	// Saves saved history data to local storage
-	localStorage.setItem("savedHistoryData", JSON.stringify(savedHistory));
-
-	// Saves quote data to storage
-	localStorage.setItem("quoteData", JSON.stringify(quoteData));
-
-	// Displays previously saved data
-	loadHistoryData();
+$("#generate-text").on("click", setQuote);
+// Calls this future to reset or call text under image
+function setQuote() {
+fetch('https://api.adviceslip.com/advice')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        const quote = data.slip.advice;
+        console.log(quote);
+        $("#quote-box-text").text(quote);
+    })
 };
 
-// FUnction to display to load saved data
-let loadHistoryData = function () {
 
-	// Retrieves saved data from local storage
-	savedHistory = JSON.parse(localStorage.getItem("savedHistoryData"));
+// Local Storage Code
+// Still deciding on path to take
 
-	// Retireves te quote data from local storage
-	quoteData = JSON.parse(localStorage.getItem("quoteData"));
+// // Search History Function for Memes
 
-	// if no data is present then creates empty array
-	if (!savedHistory) {
-        savedHistory = []
-    }
+// // Function to save memes to local storage
+// let saveHistoryData = function (memes) {
 
-    if (!quoteData) {
-        quoteData = []
-    }
+// 	// if statement to display saved item in save history list unless if it has already been saved
+// 	if(!savedHistory.includes(memes)){
+// 		savedHistory.push(memes);
+// 		$("#search-history").append("<a href='#' id='" + memes + "'>" + memes + "</a>")
+// 	}
 
-	// Clears any previous data from the saved history unordered list
-	$("#search-history").empty();
+// 	// Saves saved history data to local storage
+// 	localStorage.setItem("savedHistoryData", JSON.stringify(savedHistory));
 
-	 // Converts the displayed meme in saved history to link to pull data from storage if clicked
-    // Append to unordered list
-	for(i = 0 ; i < savedHistory.length ;i++) {
+// 	// Saves quote data to storage
+// 	localStorage.setItem("quote", JSON.stringify(quote));
 
-        $("#search-history").append("<a href='#' id='" + savedHistory[i] + "'>" + savedHistory[i] + "</a>");
-    }
-};
+// 	// Displays previously saved data
+// 	loadHistoryData();
+// };
 
-// Save Button?
+// // FUnction to display to load saved data
+// let loadHistoryData = function () {
+
+// 	// Retrieves saved data from local storage
+// 	savedHistory = JSON.parse(localStorage.getItem("savedHistoryData"));
+
+// 	// Retireves te quote data from local storage
+// 	quote = JSON.parse(localStorage.getItem("quote"));
+
+// 	// if no data is present then creates empty array
+// 	if (!savedHistory) {
+//         savedHistory = []
+//     }
+
+//     if (!quoteData) {
+//         quoteData = []
+//     }
+
+// 	// Clears any previous data from the saved history unordered list
+// 	$("#search-history").empty();
+
+// 	 // Converts the displayed meme in saved history to link to pull data from storage if clicked
+//     // Append to unordered list
+// 	for(i = 0 ; i < savedHistory.length ;i++) {
+
+//         $("#search-history").append("<a href='#' id='" + savedHistory[i] + "'>" + savedHistory[i] + "</a>");
+//     }
+// };
+
+
 // $("#search-form").submit(formSubmit);
 
-// Event Handlers
-$("#search-history").on("click", function(event){
+// // Event Handlers
+// $("#search-history").on("click", function(event){
 
-	// Retrieves links value from id
-    let pastMeme = $(event.target).closest("a").attr("id");
+// 	// Retrieves links value from id
+//     let pastMeme = $(event.target).closest("a").attr("id");
 
-	// Pushes id's link value to displayMeme function
-    displayMeme(pastMeme);
-});
-
-
-
-// Weather Dashboard Functions
-
-/* // Function to save the city searched in form to local storage
-let saveHistoryData = function (city) {
-
-    // if statement stating that if the the search history below the search bar does not inslude the city searched then it should load beneath if
-    // if the city is already present then no need to add again
-    if(!savedHistory.includes(city)){
-        savedHistory.push(city);
-        $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + city + "'>" + city + "</a>")
-    } 
-
-    // Saves savedHistory array to local storage
-    localStorage.setItem("savedHistoryData", JSON.stringify(savedHistory));
-
-    // Saves city data to local storage
-    localStorage.setItem("cityData", JSON.stringify(cityData));
-
-    // Displays the search history based on what city has been entered
-    loadHistoryData();
-};
-
-// Function to load city data saved to local storage
-let loadHistoryData = function() {
-
-    // Retrieves search history data from local storage
-    savedHistory = JSON.parse(localStorage.getItem("savedHistoryData"));
-    // Retrieves the city name data from local storage
-    cityData = JSON.parse(localStorage.getItem("cityData"));
-  
-    // If not data is present then this creates an empt array
-    if (!savedHistory) {
-        savedHistory = []
-    }
-
-    if (!cityData) {
-        cityData = ""
-    }
-
-    // Clears any previous data from the search history unordered list
-    $("#search-history").empty();
-
-    // For loop that runs through the cities avilable in the city data of openweather api
-    for(i = 0 ; i < savedHistory.length ;i++) {
-
-
-        // Converts the display city name in search history to link to pull data from storage if clicked
-        // Append to unordered list
-        $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + savedHistory[i] + "'>" + savedHistory[i] + "</a>");
-    }
-  };
-
-// Displays the search history based on what city has been entered
-loadHistoryData();
-
-// Starts webpage off with most recent search from local storage
-if (cityData != ""){
-    getWeather(cityData);
-}
-
-// Event handlers for form submittion and click functions
-$("#search-form").submit(formSubmit);
-$("#search-history").on("click", function(event){
-
-    // Retrieves links value from id
-    let pastCity = $(event.target).closest("a").attr("id");
-
-    // Pushes id's link value to getWeather function
-    getWeather(pastCity);
-}); */
+// 	// Pushes id's link value to displayMeme function
+//     displayMeme(pastMeme);
+// });
