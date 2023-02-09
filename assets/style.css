@@ -41,3 +41,14 @@
  
 /* imgcontainer */
 
+
+/*Instructions Text Box*/
+#Instructions {
+    display: flex;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-weight: bolder light;
+    padding: 15px;
+    align-items: center;
+}
