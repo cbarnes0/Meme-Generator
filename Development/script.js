@@ -1,6 +1,10 @@
 // Api Imgflip links: 'https://api.imgflip.com/get_memes' //
 let meme = [];
 let currentMemeIndex = 0;
+var quote;
+
+
+// This fetches the data from the meme image api and creates a function to navigate it with arrow keys
 fetch('https://api.imgflip.com/get_memes')
 	.then(response => response.json())
 	.then(response => {
@@ -25,12 +29,8 @@ fetch('https://api.imgflip.com/get_memes')
 	})
 	.catch(err => console.error(err));
 
-
-
 // Advice API ------------------------------------------------------------- //
 // Add event listener on button
-var quote;
-
 $("#generate-text").on("click", setQuote);
 // Calls this future to reset or call text under image
 function setQuote() {
@@ -45,41 +45,55 @@ fetch('https://api.adviceslip.com/advice')
 	})
 };
 
-  function displayMeme(memes, index) {
-	const memeContainer = document.getElementById("memeContainer");
-	memeContainer.innerHTML = `<img src="${memes[index].url}" id="current-meme" alt="Meme">`;
-}
-
 var counter = 0;
 
+// Function to display the meme
+function displayMeme(memes, index) {
+  const memeContainer = document.getElementById("memeContainer");
+  memeContainer.innerHTML = `<img src="${memes[index].url}" id="current-meme" alt="Meme">`;
+}
+
+// This function saves the data from each API locally
 $(document).ready(function() {
-    $("#save-data").click(function() {
-      var quoteText = $("#quote-box-text").text();
-      var memeImage = $("#current-meme").attr("src");
-      console.log(memeImage);
-      localStorage.setItem("quoteText" + counter, quoteText);
-      localStorage.setItem("memeImage" + counter, memeImage);
-      counter++;
-	  addButtonLoop();
-    });
-    if (localStorage.getItem("quoteText0")) {
-      $("#quote-box-text").text(localStorage.getItem("quoteText0"));
-      $("#current-meme").attr("src", localStorage.getItem("memeImage0"));
-    }
-	addButtonLoop();
+  // Check if the counter value exists in local storage
+  if (localStorage.getItem("counter")) {
+    counter = parseInt(localStorage.getItem("counter"));
+  }
+
+  $("#save-data").click(function() {
+    var quoteText = $("#quote-box-text").text();
+    var memeImage = $("#current-meme").attr("src");
+    console.log(memeImage);
+    localStorage.setItem("quoteText" + counter, quoteText);
+    localStorage.setItem("memeImage" + counter, memeImage);
+    counter++;
+    localStorage.setItem("counter", counter);
+    addButtonLoop();
   });
 
+  if (localStorage.getItem("quoteText0")) {
+    $("#quote-box-text").text(localStorage.getItem("quoteText0"));
+    $("#current-meme").attr("src", localStorage.getItem("memeImage0"));
+  }
+
+  // Calls the loop to add button
+  addButtonLoop();
+});
+
+// This function loops to add buttons based on the counter variable
 function addButtonLoop() {
-	$("#button-container").empty();
-	for (var i = 0; i < counter; i++) {
-		const button = $("<button>").text("Meme Creation " + (i + 1)).attr("id", "recall-btn-" + i);
-		button.on("click", function() {
-			var index = $(this).attr("id").split("-")[2];
-			$("#quote-box-text").text(localStorage.getItem("quoteText" + index));
-			$("#current-meme").attr("src", localStorage.getItem("memeImage" + index));
-		});
-		$("#button-container").append(button);
-	}
+  $("#button-container").empty();
+  for (var i = 0; i < counter; i++) {
+    const button = $("<button>")
+      .text("Meme Creation " + (i + 1))
+      .attr("id", "recall-btn-" + i);
+    button.on("click", function() {
+      var index = $(this).attr("id").split("-")[2];
+      $("#quote-box-text").text(localStorage.getItem("quoteText" + index));
+      $("#current-meme").attr("src", localStorage.getItem("memeImage" + index));
+    });
+    $("#button-container").append(button);
+  }
 };
 
 // $("#recall-test-btn").on("click", function(i) {
@@ -90,15 +104,6 @@ function addButtonLoop() {
 //       $("#current-meme").attr("src", localStorage.getItem("memeImage" + index));
 //     });
 //   });
-
-  
-  
-
-
-
-
-
-
 
 // MODAL  ----------------------------------------------------------------- //
 var modal = document.querySelector('.modal');
