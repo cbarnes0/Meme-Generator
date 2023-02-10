@@ -1,7 +1,6 @@
 // Api Imgflip links: 'https://api.imgflip.com/get_memes' //
 
 let currentMemeIndex = 0;
-
 fetch('https://api.imgflip.com/get_memes')
     .then(response => response.json())
     .then(response => {
@@ -83,7 +82,6 @@ $(document).ready(function() {
       localStorage.setItem("quoteText", quoteText);
       localStorage.setItem("memeImage", memeImage);
     });
-
     if (localStorage.getItem("quoteText")) {
       $("#quote-box-text").text(localStorage.getItem("quoteText"));
     }
