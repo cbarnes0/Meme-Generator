@@ -1,7 +1,6 @@
 // Api Imgflip links: 'https://api.imgflip.com/get_memes' //
-
+let meme = [];
 let currentMemeIndex = 0;
-
 fetch('https://api.imgflip.com/get_memes')
 	.then(response => response.json())
 	.then(response => {
@@ -26,13 +25,12 @@ fetch('https://api.imgflip.com/get_memes')
 	})
 	.catch(err => console.error(err));
 
-function displayMeme(memes, index) {
-	const memeContainer = document.getElementById("memeContainer");
-	memeContainer.innerHTML = `<img src="${memes[index].url}" alt="Meme">`;
-}
+
 
 // Advice API ------------------------------------------------------------- //
 // Add event listener on button
+var quote;
+
 $("#generate-text").on("click", setQuote);
 // Calls this future to reset or call text under image
 function setQuote() {
@@ -41,12 +39,57 @@ fetch('https://api.adviceslip.com/advice')
 		return response.json();
 	})
 	.then(function(data) {
-		var quote = data.slip.advice;
-		console.log(quote);
+		const quotes = data.slip.advice;
 
-		$("#quote-box-text").text(quote);
+		$("#quote-box-text").text(quotes);
 	})
 };
+
+  function displayMeme(memes, index) {
+	const memeContainer = document.getElementById("memeContainer");
+	memeContainer.innerHTML = `<img src="${memes[index].url}" id="current-meme" alt="Meme">`;
+}
+
+$(document).ready(function() {
+    $("#save-data").click(function() {
+      var quoteText = $("#quote-box-text").text();
+      var memeImage = $("#current-meme").attr("src");
+      console.log(memeImage);
+      localStorage.setItem("quoteText", quoteText);
+      localStorage.setItem("memeImage", memeImage);
+    });
+    if (localStorage.getItem("quoteText")) {
+      $("#quote-box-text").text(localStorage.getItem("quoteText"));
+    }
+    if (localStorage.getItem("memeImage")) {
+      $("#current-meme").attr("src", localStorage.getItem("memeImage"));
+    }
+  });
+
+  $("#recall-test-btn").on("click", function() {
+	currentMemeIndex = parseInt(localStorage.getItem("currentMemeIndex")) || 0;
+	meme = JSON.parse(localStorage.getItem("meme")) || [];
+	const quotes = localStorage.getItem("quoteText") || "";
+  
+	if (Array.isArray(meme) && meme.length > 0) {
+	  displayMeme(meme, currentMemeIndex);
+	}
+	$("#quote-box-text").text("");
+	$("#quote-box-text").text(quotes);
+	if (localStorage.getItem("memeImage")) {
+      $("#current-meme").attr("src", localStorage.getItem("memeImage"));
+    }
+});
+
+  
+  
+
+
+
+
+
+
+
 // MODAL  ----------------------------------------------------------------- //
 // var modal = document.querySelector('.modal');
 // var closeButtons = document.querySelectorAll('.close-modal');
