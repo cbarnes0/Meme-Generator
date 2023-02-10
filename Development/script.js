@@ -50,36 +50,46 @@ fetch('https://api.adviceslip.com/advice')
 	memeContainer.innerHTML = `<img src="${memes[index].url}" id="current-meme" alt="Meme">`;
 }
 
+var counter = 0;
+
 $(document).ready(function() {
     $("#save-data").click(function() {
       var quoteText = $("#quote-box-text").text();
       var memeImage = $("#current-meme").attr("src");
       console.log(memeImage);
-      localStorage.setItem("quoteText", quoteText);
-      localStorage.setItem("memeImage", memeImage);
+      localStorage.setItem("quoteText" + counter, quoteText);
+      localStorage.setItem("memeImage" + counter, memeImage);
+      counter++;
+	  addButtonLoop();
     });
-    if (localStorage.getItem("quoteText")) {
-      $("#quote-box-text").text(localStorage.getItem("quoteText"));
+    if (localStorage.getItem("quoteText0")) {
+      $("#quote-box-text").text(localStorage.getItem("quoteText0"));
+      $("#current-meme").attr("src", localStorage.getItem("memeImage0"));
     }
-    if (localStorage.getItem("memeImage")) {
-      $("#current-meme").attr("src", localStorage.getItem("memeImage"));
-    }
+	addButtonLoop();
   });
 
-  $("#recall-test-btn").on("click", function() {
-	currentMemeIndex = parseInt(localStorage.getItem("currentMemeIndex")) || 0;
-	meme = JSON.parse(localStorage.getItem("meme")) || [];
-	const quotes = localStorage.getItem("quoteText") || "";
-  
-	if (Array.isArray(meme) && meme.length > 0) {
-	  displayMeme(meme, currentMemeIndex);
+function addButtonLoop() {
+	$("#button-container").empty();
+	for (var i = 0; i < counter; i++) {
+		const button = $("<button>").text("Meme Creation " + (i + 1)).attr("id", "recall-btn-" + i);
+		button.on("click", function() {
+			var index = $(this).attr("id").split("-")[2];
+			$("#quote-box-text").text(localStorage.getItem("quoteText" + index));
+			$("#current-meme").attr("src", localStorage.getItem("memeImage" + index));
+		});
+		$("#button-container").append(button);
 	}
-	$("#quote-box-text").text("");
-	$("#quote-box-text").text(quotes);
-	if (localStorage.getItem("memeImage")) {
-      $("#current-meme").attr("src", localStorage.getItem("memeImage"));
-    }
-});
+};
+
+// $("#recall-test-btn").on("click", function(i) {
+  
+//     $("#recall-btn-" + i).on("click", function() {
+//       var index = $(this).attr("id").split("-")[2];
+//       $("#quote-box-text").text(localStorage.getItem("quoteText" + index));
+//       $("#current-meme").attr("src", localStorage.getItem("memeImage" + index));
+//     });
+//   });
 
   
   
@@ -91,27 +101,27 @@ $(document).ready(function() {
 
 
 // MODAL  ----------------------------------------------------------------- //
-// var modal = document.querySelector('.modal');
-// var closeButtons = document.querySelectorAll('.close-modal');
-// // set open modal behaviour
+var modal = document.querySelector('.modal');
+var closeButtons = document.querySelectorAll('.close-modal');
+// set open modal behaviour
 
-// // set close modal behaviour
-// for (i = 0; i < closeButtons.length; ++i) {
-//   closeButtons[i].addEventListener('click', function() {
-//     modal.classList.toggle('modal-open');
-// 	});
-// }
-// // close modal if clicked outside content area
-// document.querySelector('.modal-inner').addEventListener('click', function() {
-//   modal.classList.toggle('modal-open');
-// });
-// // prevent modal inner from closing parent when clicked
-// document.querySelector('.modal-content').addEventListener('click', function(e) {
-// 	e.stopPropagation();
-// });
-// // Allows escape and space key to close for accessiblity purposes. 
-// document.addEventListener("keydown", function(event) {
-// 	if (event.key === "Escape" || event.key === " ") {
-// 		modal.classList.toggle('modal-open');
-// 	}
-// }); 
+// set close modal behaviour
+for (i = 0; i < closeButtons.length; ++i) {
+  closeButtons[i].addEventListener('click', function() {
+    modal.classList.toggle('modal-open');
+	});
+}
+// close modal if clicked outside content area
+document.querySelector('.modal-inner').addEventListener('click', function() {
+  modal.classList.toggle('modal-open');
+});
+// prevent modal inner from closing parent when clicked
+document.querySelector('.modal-content').addEventListener('click', function(e) {
+	e.stopPropagation();
+});
+// Allows escape and space key to close for accessiblity purposes. 
+document.addEventListener("keydown", function(event) {
+	if (event.key === "Escape" || event.key === " ") {
+		modal.classList.toggle('modal-open');
+	}
+}); 

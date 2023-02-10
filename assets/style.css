@@ -45,17 +45,6 @@ h1, h4 {
     justify-content: center;
     text-align: center;
 }
-
-/* #text-input {
-    margin-top: 50px;;
-    align-items: center;
-    text-align: center;
-}
-
-#enter-input {
-    align-items: center;
-    text-align: center;
-} */
  
 /* Carson - ISSUE: Meme sizes were not uniform. SOLVED: I added a width to the
 memeContainer id and a border. This border helped me realize the white space in some of the 
