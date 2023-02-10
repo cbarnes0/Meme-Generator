@@ -2,6 +2,7 @@
     --lightblue: #ADD8E6;
     --black: #000000;
     --rainbow-gradient: linear-gradient(-90deg,#adfbda 0,#35c3ff 30%,#fda399 50%,#76d880 70%,#ebf38b 90%,#adfbda 100%);
+    --white: #ffffff;
 }
 
 * {
@@ -129,14 +130,14 @@ img {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.65);
-	visibility: hidden;
-	backface-visibility: hidden;
+    visibility: hidden;
+    backface-visibility: hidden;
     opacity: 0;
     transition: opacity .15s ease-in-out; 
 }
 .modal-open {
     visibility: visible;
-  	backface-visibility: visible;  
+    backface-visibility: visible;  
     opacity: 1;
     z-index: 1;
 }  
@@ -181,4 +182,11 @@ button {
 button:first-child {
     margin-left: 0;
 }
-        
+
+#form-text {
+    color: var(--white);
+}
+
+#text {
+    color: var(--white);
+}
