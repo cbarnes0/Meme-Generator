@@ -27,7 +27,9 @@
             <section class="row">
                 <div class="main-content">
                     <div class="six columns">
-                        <button>Previous</button>
+                        <div id="text">
+                        <ul id="meme-data"></ul>
+                        </div>
                     </div>
                     <!-- img -->
                     <div class="six columns imgHolder" id="memeContainer">
@@ -35,7 +37,12 @@
                         <img id="memeImage" src="" alt="Meme">
                     </div>
                     <div class="six columns">
-                        <button>Next</button>
+                        <form id="submit-meme">
+                            <label id="form-text" for="memeNameInput">Save Dank Memes</label>
+                            <!-- <input type="text" placeholder="Meme Name" id="meme-input"> -->
+                            <!-- <input class="button-primary" type="submit" value="Submit"> -->
+                            <button id="save-data">Submit</button>
+                        </form>
                     </div>
                 </div>
             </section>

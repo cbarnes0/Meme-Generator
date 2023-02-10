@@ -2,6 +2,7 @@
 
 let currentMemeIndex = 0;
 
+
 fetch('https://api.imgflip.com/get_memes')
 	.then(response => response.json())
 	.then(response => {
@@ -28,7 +29,7 @@ fetch('https://api.imgflip.com/get_memes')
 
 function displayMeme(memes, index) {
 	const memeContainer = document.getElementById("memeContainer");
-	memeContainer.innerHTML = `<img src="${memes[index].url}" alt="Meme">`;
+	memeContainer.innerHTML = `<img src="${memes[index].url}" id="current-meme" alt="Meme">`;
 }
 
 // Advice API ------------------------------------------------------------- //
@@ -73,69 +74,34 @@ fetch('https://api.adviceslip.com/advice')
 // 	}
 // }); 
 
-// Local Storage Code
-// Still deciding on path to take
 
-// Search History Function for Memes
+$(document).ready(function() {
+	$("#save-data").click(function() {
+	  var quoteText = $("#quote-box-text").text();
+	  var memeImage = $("#current-meme").attr("src");
+	  console.log(memeImage);
+	  localStorage.setItem("quoteText", quoteText);
+	  localStorage.setItem("memeImage", memeImage);
+	});
 
-// Function to save memes to local storage
-let saveHistoryData = function (memes) {
+	if (localStorage.getItem("quoteText")) {
+	  $("#quote-box-text").text(localStorage.getItem("quoteText"));
+	}
+	if (localStorage.getItem("memeImage")) {
+	  $("#current-meme").attr("src", localStorage.getItem("memeImage"));
+	}
+  });
+  
 
- // if statement to display saved item in save history list unless if it has already been saved
- if(!savedHistory.includes(memes)){
-     savedHistory.push(memes);
-     $("#search-history").append("<a href='#' id='" + memes + "'>" + memes + "</a>")
- }
+// function saveMemeData() {
+// 	var currentQuote = document.getElementById("quote-box-text").innerText();
+// 	localStorage.setItem("currentQuote", currentQuote);
+  
+// 	var currentImage = document.getElementById("memeImage").src;
+// 	localStorage.setItem("currentImage", currentImage);
+//   }
 
- // Saves saved history data to local storage
- localStorage.setItem("savedHistoryData", JSON.stringify(savedHistory));
-
- // Saves quote data to storage
- localStorage.setItem("quote", JSON.stringify(quote));
-
- // Displays previously saved data
- loadHistoryData();
-};
-
-// Function to display to load saved data
-
-let loadHistoryData = function () {
-
- // Retrieves saved data from local storage
- savedHistory = JSON.parse(localStorage.getItem("savedHistoryData"));
-
- // Retireves te quote data from local storage
- quote = JSON.parse(localStorage.getItem("quote"));
-
- // if no data is present then creates empty array
- if (!savedHistory) {
-        savedHistory = []
-    }
-
-    if (!quoteData) {
-        quoteData = []
-    }
-
- // Clears any previous data from the saved history unordered list
- $("#search-history").empty();
-
-  // Converts the displayed meme in saved history to link to pull data from storage if clicked
-    // Append to unordered list
- for(i = 0 ; i < savedHistory.length ;i++) {
-
-        $("#search-history").append("<a href='#' id='" + savedHistory[i] + "'>" + savedHistory[i] + "</a>");
-    }
-};
-
-
-$("#search-form").submit(formSubmit);
-
-// Event Handlers
-$("#search-history").on("click", function(event){
-
- // Retrieves links value from id
-    let pastMeme = $(event.target).closest("a").attr("id");
-
- // Pushes id's link value to displayMeme function
-    displayMeme(pastMeme);
-});
+//   $("#save-data").click(function(){
+// 	saveMemeData();
+//   })
+  
