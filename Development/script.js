@@ -2,7 +2,6 @@
 
 let currentMemeIndex = 0;
 
-
 fetch('https://api.imgflip.com/get_memes')
 	.then(response => response.json())
 	.then(response => {
@@ -48,6 +47,7 @@ fetch('https://api.adviceslip.com/advice')
 		$("#quote-box-text").text(quote);
 	})
 };
+
 // MODAL  ----------------------------------------------------------------- //
 // var modal = document.querySelector('.modal');
 // var closeButtons = document.querySelectorAll('.close-modal');
@@ -92,16 +92,4 @@ $(document).ready(function() {
 	}
   });
   
-
-// function saveMemeData() {
-// 	var currentQuote = document.getElementById("quote-box-text").innerText();
-// 	localStorage.setItem("currentQuote", currentQuote);
-  
-// 	var currentImage = document.getElementById("memeImage").src;
-// 	localStorage.setItem("currentImage", currentImage);
-//   }
-
-//   $("#save-data").click(function(){
-// 	saveMemeData();
-//   })
   
