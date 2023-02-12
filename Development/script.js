@@ -2,6 +2,7 @@
 let meme = [];
 let currentMemeIndex = 0;
 var quote;
+var counter = 0;
 
 
 // This fetches the data from the meme image api and creates a function to navigate it with arrow keys
@@ -30,7 +31,8 @@ fetch('https://api.imgflip.com/get_memes')
 	.catch(err => console.error(err));
 
 // Advice API ------------------------------------------------------------- //
-// Add event listener on button
+
+// Add event listener on button for Advice API
 $("#generate-text").on("click", setQuote);
 // Calls this future to reset or call text under image
 function setQuote() {
@@ -44,8 +46,6 @@ fetch('https://api.adviceslip.com/advice')
 		$("#quote-box-text").text(quotes);
 	})
 };
-
-var counter = 0;
 
 // Function to display the meme
 function displayMeme(memes, index) {
@@ -96,16 +96,8 @@ function addButtonLoop() {
   }
 };
 
-// $("#recall-test-btn").on("click", function(i) {
-  
-//     $("#recall-btn-" + i).on("click", function() {
-//       var index = $(this).attr("id").split("-")[2];
-//       $("#quote-box-text").text(localStorage.getItem("quoteText" + index));
-//       $("#current-meme").attr("src", localStorage.getItem("memeImage" + index));
-//     });
-//   });
-
 // MODAL  ----------------------------------------------------------------- //
+
 var modal = document.querySelector('.modal');
 var closeButtons = document.querySelectorAll('.close-modal');
 // set open modal behaviour

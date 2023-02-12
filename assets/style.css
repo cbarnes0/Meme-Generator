@@ -16,8 +16,6 @@ body {
     margin: 5px;
     align-items: center;
     text-align: center;
-    /* color: white; */
-    /* background-color: var(--lightblue); */
     padding: 10px;
 }
 
@@ -46,67 +44,78 @@ h1, h4 {
     text-align: center;
 }
  
-/* Carson - ISSUE: Meme sizes were not uniform. SOLVED: I added a width to the
-memeContainer id and a border. This border helped me realize the white space in some of the 
-images that was throwing us off. Tied to this containter is its child the meme img.
-I used max height and width to have it fill its parent container and used flex to center the
-image within it. */
+#button-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex;
+    flex-wrap: wrap;
+}
+
+#button-container button {
+    color: var(--lightblue);
+    margin: 0 0 10px 10px;
+}
+
 #memeContainer {
     display: flex; 
     justify-content: center;
-    width: 600px;
-    /* border: 5px solid black; */
+    width: 500px;
+    height: auto;
 }
+
 img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 600px;
+}
+
+#saveDataContainer {
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+#saveDataContainer button {
+    color: var(--lightblue);
+    width: auto;
+    margin: 0 0 10px 10px;
 }
 
 /* ADVICE API BOX */
 #advice-card {
     margin: 5px;
-    /* display: block; */
     text-align: center;
-    /* border: 5px black solid; */
 }
 
-/* #extra-space {
-    border: black solid 5px;
-} */
-
 #quote-box {
-    /* margin: 50px;
-    padding: 10px; */
-    /* border: black solid 5px; */
-    /* width: 800px; */
-    height: 200px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 100px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    
 }
 
 #quote-box p {
     margin-top: 5px;
+    margin-bottom: 10px;
     color: white;
     text-align: center;
     display: flex;
     align-items: flex-start;
 }
 
+/* Button-box contains the generate text button, not the appended buttons */
 #button-box {
     margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    /* border: black solid 5px; */
-    /* width: 800px; */
     height: 200px;
 }
 #button-box button {
     display: flex;
     justify-content: center;
+    width: auto;
 }
 
 /* MODAL */
@@ -165,10 +174,10 @@ img {
     justify-content: center;
     align-items: center;  
 }
-button {
+.modal-buttons button {
     margin-left: 1em;
 } 
-button:first-child {
+.modal-buttons button:first-child {
     margin-left: 0;
 }
         
