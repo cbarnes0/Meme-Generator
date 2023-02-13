@@ -94,6 +94,18 @@ function addButtonLoop() {
     });
     $("#button-container").append(button);
   }
+  $("#button-container2").empty();
+  for (var i = 0; i < counter; i++) {
+    const button = $("<button>")
+      .text("Meme Creation " + (i + 1))
+      .attr("id", "recall-btn-" + i);
+    button.on("click", function() {
+      var index = $(this).attr("id").split("-")[2];
+      $("#quote-box-text").text(localStorage.getItem("quoteText" + index));
+      $("#current-meme").attr("src", localStorage.getItem("memeImage" + index));
+    });
+    $("#button-container2").append(button);
+  }
 };
 
 // MODAL  ----------------------------------------------------------------- //
@@ -122,3 +134,19 @@ document.addEventListener("keydown", function(event) {
 		modal.classList.toggle('modal-open');
 	}
 }); 
+
+// TEST 
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  document.body.style.backgroundColor = "#162c35";
+}
