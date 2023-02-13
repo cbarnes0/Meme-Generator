@@ -11,24 +11,32 @@
 
 <body>
     <div>
-        <header class="row">
-
+        <header class="row">  
+  <div id="main">
+    ...
+  </div>
             <div class="twelve columns">
-
+                <div id="header-container">
                 <h1 id="header" class="u-max-full-width">Meme Generator</h1>
-
-
+                </div>
             </div>
+                <!-- TEST  -->
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div id="button-container2"></div>
+                </div>
+                
+
+            
 
         </header>
     </div>
 
     <main>
             <section class="row">
-                <div class="main-content">
+                <div class="main-content" id="main-card">
                     <div class="three columns" id="button-container">
                         <!-- Changing this to test button to test recalling info from APIs -->
-                        <button id="recall-test-btn">Test</button>
                     </div>
                     <!-- img -->
                     <div class="three columns imgHolder" id="memeContainer">
@@ -53,13 +61,15 @@
                     </div>
                 </div>
             </section>
-            <!-- <section class="row">
+            <section class="row" id="small-device-container">
                 <div class="main-content">
-                    <div class="twelve-columns" id="button-box">
-                        <button class="button-primary" id="generate-text">Generate Text</button>
+                    <div class="three columns"></div>
+                    <div class="three columns" id="small-device-btns">
+                        <button onclick="openNav()">Open List of Memes</button>
                     </div>
+                    <div class="three columns"></div>
                 </div>
-            </section> -->
+            </section>
         </div>
 
         <!-- MODAL -->
