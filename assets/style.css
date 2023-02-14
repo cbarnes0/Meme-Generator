@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
 :root {
     --lightblue: #ADD8E6;
     --black: #000000;
@@ -95,7 +98,42 @@ body {
     padding: 5px;
 }
 
-h1,
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 60px;
+    color: white;
+    text-shadow: 0 0 2px #000000;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(90deg, #adfbda 0, #35c3ff 30%, #fda399 50%, #76d880 70%, #ebf38b 90%, #adfbda 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 2rem #000);
+    text-shadow: none !important;
+    /* infinite animation */
+    animation: text-animation 2s ease-in-out infinite;
+  }
+
+
+@keyframes text-animation {
+        0% {
+          transform: translateY(-50%);
+        }
+        50% {
+          transform: translateY(0%);
+        }
+        100% {
+          transform: translateY(-50%);
+    }
+  }
+
+
 h4 {
     background-image: var(--rainbow-gradient, #fff);
     background-size: 100%;
@@ -126,22 +164,19 @@ div#main-card.main-content {
     border-radius: 20px;
     padding: 10px;
     margin: 20px 150px 20px 150px;
-    box-shadow: 0px 0px 5px #b3b3b3;
+    box-shadow: 0px 0px 5px #b3b3b3,
+                inset 0 0 10px #000000;
     border: 12px solid #162c35;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-}
-
-
-div#header-container {
-    background-color: #000;
-    margin: 20px 550px 20px 550px;
-    border-radius: 40px;
+    transition: all 0.5s ease-in-out;
     
-
+    
 }
+
+
 
 
 
@@ -197,7 +232,10 @@ img {
 }
 
 
-
+i.fa-regular.fa-floppy-disk {
+    font-size: 20px;
+    margin-right: 10px;
+}
 
 
 #saveDataContainer {
@@ -400,11 +438,24 @@ section#advice-card.row {
 
 p#quote-box-text {
     font-size: 14px;
-    
+    color: white;
     margin: 0;
     padding: 0;
     text-align: center;
+    padding-bottom: 10px;
+    animation: text-fade-in 1s ease-in-out forwards;
 }
+
+@keyframes text-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+    
+
 
 
 .hide {
