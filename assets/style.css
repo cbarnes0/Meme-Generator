@@ -7,81 +7,6 @@
     --rainbow-gradient: linear-gradient(-90deg, #adfbda 0, #35c3ff 30%, #fda399 50%, #76d880 70%, #ebf38b 90%, #adfbda 100%);
 }
 
-/* TEST */
-
-/* The side navigation menu */
-.open-nav {
-    color: white;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-right: 20px;
-}
-
-.sidenav {
-    height: 100%;
-    /* 100% Full-height */
-    width: 0;
-    /* 0 width - change this with JavaScript */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Stay on top */
-    top: 0;
-    /* Stay at the top */
-    right: 0;
-    color: white;
-    background-color: #111;
-    /* Black*/
-    overflow-x: hidden;
-    /* Disable horizontal scroll */
-    padding-top: 60px;
-    /* Place content 60px from the top */
-    transition: 0.5s;
-    /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-
-    .sidenav a {
-        font-size: 18px;
-    }
-}
-
 * {
     margin: 0;
 }
@@ -89,7 +14,6 @@
 body {
     background-color: #162c35;
 }
-
 
 #header {
     margin: 5px;
@@ -117,9 +41,8 @@ h1 {
     filter: drop-shadow(0 0 2rem #000);
     text-shadow: none !important;
     /* infinite animation */
-    animation: text-animation 2s ease-in-out infinite;
+    animation: text-animation 8s ease-in-out infinite;
   }
-
 
 @keyframes text-animation {
         0% {
@@ -152,18 +75,59 @@ h4 {
     
 }
 
-/* inspect to add a background color to the header */
+.open-nav {
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-right: 20px;
+}
 
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    color: white;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
 
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
 
+.sidenav a:hover {
+    color: #f1f1f1;
+}
 
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
 
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
 
 div#main-card.main-content {
-    background-color: white;
+    background-color: #1f3e4a;
     border-radius: 20px;
     padding: 10px;
-    margin: 20px 150px 20px 150px;
+    margin: 10px;
     box-shadow: 0px 0px 5px #b3b3b3,
                 inset 0 0 10px #000000;
     border: 12px solid #162c35;
@@ -172,14 +136,7 @@ div#main-card.main-content {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     transition: all 0.5s ease-in-out;
-    
-    
 }
-
-
-
-
-
 
 .main-content {
     display: flex;
@@ -194,9 +151,7 @@ div#main-card.main-content {
     justify-content: center;
     align-items: flex;
     flex-wrap: wrap;
-    overflow-y: scroll;
-    /* height will change depending on the number of buttons */
-    height: 300px;
+    
 }
 
 #button-container button {
@@ -219,24 +174,23 @@ div#main-card.main-content {
 #memeContainer {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 500px;
-    height: auto;
-    /* adding overflow:hidden to the container will hide the overflowing content */
+    height: 500px;
     overflow:hidden;
     position: relative;
 }
 
 img {
     max-width: 100%;
-    max-height: 600px;
+    max-height: 100%;
+    position: absolute;
 }
-
 
 i.fa-regular.fa-floppy-disk {
     font-size: 20px;
     margin-right: 10px;
 }
-
 
 #saveDataContainer {
     display: flex;
@@ -249,7 +203,6 @@ i.fa-regular.fa-floppy-disk {
     margin: 0 0 10px 10px;
 }
 
-/* ADVICE API BOX */
 #advice-card {
     margin: 5px;
     text-align: center;
@@ -274,7 +227,6 @@ i.fa-regular.fa-floppy-disk {
     align-items: flex-start;
 }
 
-/* Button-box contains the generate text button, not the appended buttons */
 #button-box {
     margin-top: 5px;
     display: flex;
@@ -302,15 +254,9 @@ i.fa-regular.fa-floppy-disk {
     color: var(--lightblue);
 }
 
-
-
-
-/* buttons */
-/* Three are three buttons */
-/* #save-data, #generate-text, #recall-btn-0 */
 #save-data {
     align-items: center;
-    background: #5adbb5;
+    background: #4ab958;
     color: whitesmoke !important;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -334,8 +280,6 @@ i.fa-regular.fa-floppy-disk {
     color: rgba(0, 0, 0, 0.65);
 }
 
-
-
 #save-data:hover {
   transform: translateY(-1px);
 }
@@ -350,7 +294,7 @@ i.fa-regular.fa-floppy-disk {
 
 #generate-text {
     align-items: center;
-    background: #5adbb5;
+    background: #b97e41;
     color: whitesmoke !important;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -386,13 +330,9 @@ i.fa-regular.fa-floppy-disk {
   transform: translateY(0);
 }
 
-
-/* recall-btn */
-/* #button-container button */
-/* adding margin, too close */
 #button-container button {
     align-items: center;
-    background: #5adbb5;
+    background: #cb6464;
     color: whitesmoke !important;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -426,15 +366,6 @@ i.fa-regular.fa-floppy-disk {
   
   transform: translateY(0);
 }
-/* advice card */
-/* advice card */
-/* advice card */
-/* advice card */
-
-/* section second, inspect */
-section#advice-card.row {
-    margin: 20px 300px 20px 300px;
-}
 
 p#quote-box-text {
     font-size: 14px;
@@ -455,9 +386,6 @@ p#quote-box-text {
   }
 }
     
-
-
-
 .hide {
     display: none;
 }
@@ -543,5 +471,39 @@ p#quote-box-text {
 @media screen and (min-width: 768px) {
     #small-device-container {
         display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #memeContainer {
+        width: 500px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow:hidden;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #memeContainer {
+        width: 500px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow:hidden;
+        position: relative;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
     }
 }
