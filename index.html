@@ -6,16 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link rel="stylesheet" href="./assets/style.css"/>
     <link rel="stylesheet" href="./assets/skeleton.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Meme Generator</title>
 </head>
 
 <body>
     <div>
         <header class="row">  
-  <div id="main">
+  <div id="main"><!-- dunno why the div is here. left it alone for padding i guess - tien -->
     ...
   </div>
-            <div class="twelve columns">
+            <div class="twelve columns headerBar">
                 <div id="header-container">
                 <h1 id="header" class="u-max-full-width">Meme Generator</h1>
                 </div>
@@ -44,21 +45,19 @@
                         <img id="memeImage" src="" alt="Meme">
                     </div>
                     <div class="three columns" id="saveDataContainer">
-                        <button id="save-data">Save Test</button>
+                        <button id="save-data" title="Save your meme here and review it later"><i class="fa-regular fa-floppy-disk"></i>Save Meme</button>
                     </div>
                 </div>
             </section>
 
             <section class="row" id="advice-card">
                 <div class="main-content">
-                    <div class="three columns" id="extra-space">
+                 
+                    <div class="twelve columns" id="quote-box">
+                        <p id="quote-box-text">Use arrowkeys to navigate images and "Generate Text" for random text!</p>
+                        <button class="button-primary" id="generate-text" title="click to generate advices ">Generate Text</button>
                     </div>
-                    <div class="three columns" id="quote-box">
-                        <p id="quote-box-text"></p>
-                        <button class="button-primary" id="generate-text">Generate Text</button>
-                    </div>
-                    <div class="three columns">
-                    </div>
+                   
                 </div>
             </section>
             <section class="row" id="small-device-container">
@@ -99,6 +98,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./Development/script.js"></script>
+<script>
+   
+</script>
 </body>
 
 
