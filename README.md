@@ -36,11 +36,13 @@ Links above bring user to deployed page and github repository
 
 This application is used to create personal memes using random meme images and funny advice text. These two APIs are combined and saved under one item to local storage to be accessed whenever the user wants. These saves to local storage can be accessed through buttons in the web page. This is used purely as entertainment and meme creation for social media usage.
 
+Home Page
+![alt text](./assets/images/Home-Page.png)
 
-![alt text]()
+Modal Message
+![alt text](./assets/images/Modal.html.png)
 
-![alt text]()
-
+Responsive
 ![alt text]()
 
 ## Credits
@@ -65,7 +67,11 @@ Following Websites were used:
 
 API Websites:
 
-- 
+Funny Quote API
+- https://api.adviceslip.com
+
+Meme Image API
+- https://api.imgflip.com/get_memes
 
 ## License
 
