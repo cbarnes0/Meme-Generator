@@ -1,7 +1,7 @@
 :root {
     --lightblue: #ADD8E6;
     --black: #000000;
-    --rainbow-gradient: linear-gradient(-90deg,#adfbda 0,#35c3ff 30%,#fda399 50%,#76d880 70%,#ebf38b 90%,#adfbda 100%);
+    --rainbow-gradient: linear-gradient(-90deg, #adfbda 0, #35c3ff 30%, #fda399 50%, #76d880 70%, #ebf38b 90%, #adfbda 100%);
 }
 
 /* TEST */
@@ -16,54 +16,68 @@
 }
 
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
     right: 0;
     color: white;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  }
-  
-  /* The navigation menu links */
-  .sidenav a {
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: white;
     display: block;
     transition: 0.3s;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
     color: #f1f1f1;
-  }
-  
-  /* Position and style the close button (top right corner) */
-  .sidenav .closebtn {
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-  }
-  
-  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-  #main {
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
     transition: margin-left .5s;
     padding: 20px;
-  }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
 
 * {
     margin: 0;
@@ -73,6 +87,7 @@ body {
     background-color: #162c35;
 }
 
+
 #header {
     margin: 5px;
     display: flex;
@@ -80,22 +95,56 @@ body {
     padding: 5px;
 }
 
-h1, h4 {
-    background-image: var(--rainbow-gradient,#fff);
+h1,
+h4 {
+    background-image: var(--rainbow-gradient, #fff);
     background-size: 100%;
     background-repeat: repeat;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 2rem #000);
-    text-shadow: none!important;
+    text-shadow: none !important;
+    
 }
 
 #title-heading {
     align-items: center;
     text-align: center;
-    color: var(--black);
+    
 }
+
+/* inspect to add a background color to the header */
+
+
+
+
+
+
+div#main-card.main-content {
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px 150px 20px 150px;
+    box-shadow: 0px 0px 5px #b3b3b3;
+    border: 12px solid #162c35;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+div#header-container {
+    background-color: #000;
+    margin: 20px 550px 20px 550px;
+    border-radius: 40px;
+    
+
+}
+
+div.main-content
+
 
 .main-content {
     display: flex;
@@ -104,12 +153,15 @@ h1, h4 {
     justify-content: center;
     text-align: center;
 }
- 
+
 #button-container {
     display: flex;
     justify-content: center;
     align-items: flex;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    /* height will change depending on the number of buttons */
+    height: 300px;
 }
 
 #button-container button {
@@ -130,16 +182,23 @@ h1, h4 {
 }
 
 #memeContainer {
-    display: flex; 
+    display: flex;
     justify-content: center;
     width: 500px;
     height: auto;
+    /* adding overflow:hidden to the container will hide the overflowing content */
+    overflow:hidden;
+    position: relative;
 }
 
 img {
     max-width: 100%;
     max-height: 600px;
 }
+
+
+
+
 
 #saveDataContainer {
     display: flex;
@@ -165,13 +224,13 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
+
 }
 
 #quote-box p {
     margin-top: 5px;
     margin-bottom: 10px;
-    color: white;
+    color: black;
     text-align: center;
     display: flex;
     align-items: flex-start;
@@ -185,6 +244,7 @@ img {
     align-items: flex-start;
     height: 200px;
 }
+
 #button-box button {
     display: flex;
     justify-content: center;
@@ -194,14 +254,160 @@ img {
 #small-device-container {
     margin-top: 20px;
 }
+
 #small-device-btns {
     display: flex;
     justify-content: center;
 }
 
-#small-device-btns button{
+#small-device-btns button {
     color: var(--lightblue);
 }
+
+
+
+
+/* buttons */
+/* Three are three buttons */
+/* #save-data, #generate-text, #recall-btn-0 */
+#save-data {
+    align-items: center;
+    background: #5adbb5;
+    color: whitesmoke !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 12px;
+    margin: 0;
+    position: relative;
+    transition: all 250ms;
+    user-select: none;
+    touch-action: manipulation;
+    
+}
+
+#save-data:hover,
+#save-data:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+
+
+#save-data:hover {
+  transform: translateY(-1px);
+}
+
+#save-data:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  
+  transform: translateY(0);
+}
+
+#generate-text {
+    align-items: center;
+    background: #5adbb5;
+    color: whitesmoke !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 12px;
+    margin: 0;
+    position: relative;
+    transition: all 250ms;
+    user-select: none;
+    touch-action: manipulation;
+    
+}
+
+#generate-text:hover,
+#generate-text:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.15);
+}
+
+#generate-text:hover {
+  transform: translateY(-1px);
+}
+
+#generate-text:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  
+  transform: translateY(0);
+}
+
+
+/* recall-btn */
+/* #button-container button */
+/* adding margin, too close */
+#button-container button {
+    align-items: center;
+    background: #5adbb5;
+    color: whitesmoke !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 12px;
+    margin: 7px;
+    position: relative;
+    transition: all 250ms;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+#button-container button:hover,
+#button-container button:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+#button-container button:hover {
+  transform: translateY(-1px);
+}
+
+#button-container button:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  
+  transform: translateY(0);
+}
+/* advice card */
+/* advice card */
+/* advice card */
+/* advice card */
+
+/* section second, inspect */
+section#advice-card.row {
+    margin: 20px 300px 20px 300px;
+
+    
+}
+
+p#quote-box-text {
+    font-size: 14px;
+    
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
 
 .hide {
     display: none;
@@ -217,25 +423,28 @@ img {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.65);
-	visibility: hidden;
-	backface-visibility: hidden;
+    visibility: hidden;
+    backface-visibility: hidden;
     opacity: 0;
-    transition: opacity .15s ease-in-out; 
+    transition: opacity .15s ease-in-out;
 }
+
 .modal-open {
     visibility: visible;
-  	backface-visibility: visible;  
+    backface-visibility: visible;
     opacity: 1;
     z-index: 1;
-}  
+}
+
 .modal-inner {
     position: relative;
     height: 100%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .modal-content {
     color: var(--lightblue);
     background-color: #20404d;
@@ -244,28 +453,34 @@ img {
     position: relative;
     text-align: center;
     margin: 2em;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
 }
+
 .modal-close-icon {
     position: absolute;
     right: 1.5em;
-}      
+}
+
 .modal-content-inner {
     padding-right: 2em;
 }
+
 .modal-buttons-seperator {
     margin: 1.5em 0;
     margin-top: 0;
 }
+
 .modal-buttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
 }
+
 .modal-buttons button {
     margin-left: 1em;
-} 
+}
+
 .modal-buttons button:first-child {
     margin-left: 0;
 }
@@ -275,6 +490,7 @@ img {
         display: none;
     }
 }
+
 @media screen and (min-width: 768px) {
     #small-device-container {
         display: none;
