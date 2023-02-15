@@ -6,7 +6,7 @@
 ![css](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 
 
-# Project-1: Meme Generator ![shield-size](https://img.shields.io/github/repo-size/cbarnes0/Meme-Generator)
+# Project-1: Meme Generator :trollface: ![shield-size](https://img.shields.io/github/repo-size/cbarnes0/Meme-Generator)
 
 ## Description
 
