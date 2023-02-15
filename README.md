@@ -26,7 +26,7 @@ This application is also an example of a continuation project. The frameworks an
 - Have a clean repository, coding practices, and properly deployed page
 
 
-## Link
+## Link :link:
 
 [Link to deployed website]()
 
