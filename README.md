@@ -49,29 +49,32 @@ Responsive
 
 Credit for the total completion of assignment include: TAs, instructor, and students of the 2022 Georgia Tech Coding Bootcamp. Their assistance allowed for the assignment to meet all requirements.
 
-Project Team: Rebooters
+### Members
 
-- Carson Barnes: (https://github.com/cbarnes0)
-- Tien Ton: (https://github.com/TimothyLai1121)
-- Aaron Dreyer: (https://github.com/AaronDreyer)
-- Zackery Bennett: (https://github.com/zack7-ai)
+| Members | GitHub |
+| ------- | ------ |
+| Carson Barnes | [https://github.com/cbarnes0] |
+| Tien Ton | [https://github.com/TimothyLai1121] |
+| Aaron Dreyer | [https://github.com/AaronDreyer] |
+| Zackery Bennett | [https://github.com/zack7-ai] |
 
+### Resources
 
-Following Websites were used:
+| Websites | Urls |
+| -------- | ---- |
+| StackOverflow | [https://stackoverflow.com/] |
+| Skeleton.css | [http://getskeleton.com/] |
+| ImgFlip | [https://imgflip.com/memegenerator] |
+| Mamke Meme | [https://makeameme.org/memegenerator] |
+| Api Meme | [https://apimeme.com/]
 
-- https://stackoverflow.com/
-- http://getskeleton.com/
-- https://imgflip.com/memegenerator
-- https://makeameme.org/memegenerator
-- https://apimeme.com/
+### API Resources
 
-API Websites:
+| API's name | API's URL |
+| ---------- | --------- |
+| Advices Slip | [https://api.adviceslip.com] |
+| Get Memes | [https://api.imgflip.com/get_memes]
 
-Funny Quote API
-- https://api.adviceslip.com
-
-Meme Image API
-- https://api.imgflip.com/get_memes
 
 ## License
 
