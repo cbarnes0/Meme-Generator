@@ -1,4 +1,8 @@
 ![rebooters](./assets/images/Rebooters-2023.png)
+![html](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
+![javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![css](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+
 
 # Project-1: Meme Generator ![shield-size](https://img.shields.io/github/repo-size/cbarnes0/Meme-Generator)
 
@@ -43,8 +47,13 @@ Home Page
 Modal Message
 ![alt text](./assets/images/Modal.html.png)
 
-Responsive
-![alt text]()
+## Fetching API
+
+![snippet](./assets/images/carbon.png)
+
+## Local.Storage
+
+![snippet2](./assets/images/449C32E7-7597-402C-9793-75DB4A65AEA3_4_5005_c.jpeg)
 
 ## Credits
 
@@ -67,7 +76,9 @@ Credit for the total completion of assignment include: TAs, instructor, and stud
 | Skeleton.css | [http://getskeleton.com/] |
 | ImgFlip | [https://imgflip.com/memegenerator] |
 | Mamke Meme | [https://makeameme.org/memegenerator] |
-| Api Meme | [https://apimeme.com/]
+| Api Meme | [https://apimeme.com/] |
+| Shield.io | [https://shields.io/] |
+| Carbon | [https://carbon.now.sh/] |
 
 ### API Resources
 
