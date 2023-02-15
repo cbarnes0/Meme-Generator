@@ -1,3 +1,5 @@
+![rebooters](./assets/images/Rebooters-2023.png)
+
 # Project-1: Meme Generator
 
 ## Description
