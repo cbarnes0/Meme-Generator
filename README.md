@@ -1,15 +1,14 @@
 ![rebooters](./assets/images/Rebooters-2023.png)
 
-# Project-1: Meme Generator
+# Project-1: Meme Generator ![shield-size](https://img.shields.io/github/repo-size/cbarnes0/Meme-Generator)
 
 ## Description
 
-This is a web application featuring our first project for the Georgia Tech Coding Bootcamp. This project is a meme generator using two server-side APIs: a random meme image generator and a random funny advice text generator. We used both of the APIs to combine into a image/text meme generator that a user can save to local storage to retrieve at a later time. This application is styled using an external stylesheet called Skeleton CSS. This is applied similar to boostrap but a second stylesheet is added along with the vanilla CSS to use as a library to add basic formatting to the HTML. These requirements applied together create a well-rounded front end web application that uses modal messages, is responsive to most devices, and has accessible coding practices.
+This is a web application featuring our first project for the Georgia Tech Coding Bootcamp. This project is a meme generator using two server-side APIs: a random meme image generator and a random funny advice text generator. We used both of the APIs to combine into a image/text meme generator that a user can save to local storage to retrieve at a later time. This application is styled using an external stylesheet called Skeleton CSS. This is applied similar to Bootstrap but a second stylesheet is added along with the vanilla CSS to use as a library to add basic formatting to the HTML. These requirements applied together create a well-rounded front end web application that uses modal messages, is responsive to most devices, and has accessible coding practices.
 
 This application is also an example of a continuation project. The frameworks and knowledge we are using now is not expansive enough to apply more complicated and interactive features to the application. However, this project can be updated at a later date once the back end curriculum is accessed to add features such as: top and bottom text addition, personal text area for user to type whatever they want, saving text on top of images into one item, and general and customizable meme creation.
 
-
-## Tasks completed
+## Tasks completed ![shield-codes](https://img.shields.io/tokei/lines/github/cbarnes0/Meme-Generator)
 
 - Use a CSS framework over than Bootstrap: Skeleton CSS
 - Create a front end application that is interactive and will react to user input
@@ -82,4 +81,4 @@ Credit for the total completion of assignment include: TAs, instructor, and stud
 
 License provided by Georgia Tech Bootcamp.
 
-External liscense not specified.
+External license not specified.
