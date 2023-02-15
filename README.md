@@ -88,10 +88,3 @@ Credit for the total completion of assignment include: TAs, instructor, and stud
 | ---------- | --------- |
 | Advices Slip | [https://api.adviceslip.com] |
 | Get Memes | [https://api.imgflip.com/get_memes]
-
-
-## License
-
-License provided by Georgia Tech Bootcamp.
-
-External license not specified.
