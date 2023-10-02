@@ -53,9 +53,19 @@
             <section class="row" id="advice-card">
                 <div class="main-content">
                  
-                    <div class="twelve columns" id="quote-box">
-                        <p id="quote-box-text">Use arrowkeys to navigate images and "Generate Text" for random text!</p>
-                        <button class="button-primary" id="generate-text" title="click to generate advices ">Generate Text</button>
+                    <div class="twelve" id="quote-box">
+                        <p class="instructions">Use arrow keys to change meme image!
+                            <br>
+                            &#8592; &#8594;
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="row">
+                <div class="main-content">
+                    <div class="twelve">
+                        <input class="button-primary" id="generate-text" title="click to generate advices " class="button-primary" type="submit" value="Generate Text">
+                        <p id="quote-box-text">Press button above to generate new funny quotes</p>
                     </div>
                    
                 </div>
@@ -81,12 +91,18 @@
                 <div class="modal-content-inner">
                   <h4>Welcome to the Rebooters Meme Generator</h4>
                   <p> The following application is meant to create laughable combinations of images and advice quotes. Our goal is to do as much as possible with the technologies we know and 
-                    continue to further develop the project in the future. Our future goal is for 'Meme Generator' to be a funcitoning Meme API with downloadable images. Enjoy! </p>  
+                    continue to further develop the project in the future. Our future goal is for 'Meme Generator' to be a funcitoning Meme API with downloadable images. Enjoy! </p>
+                    <h4>Instructions</h4>
+                    <ul>
+                    <li>Navigate through the different memes using your directional keys
+                        <br> - Right to find new memes and Left to see past memes -</li>
+                    <li>Generate new quotes to match with your meme images by clicking the button at the bottom of the screen</li>
+                    <li>Finally you can save any meme/quote combinations using the Save Meme button on the right hand side and access these saved memes on the left hand side</li>
+                </ul>
                 </div>
                 <hr class="modal-buttons-seperator">
                 <div class="modal-buttons">
-                  <button class="button close-modal">Cancel</button>
-                  <button class="button button-primary close-modal">OK</button>
+                  <input class="button button-primary close-modal" class="button-primary" type="submit" value="Create some Memes!">
                 </div>
               </div>
             </div>
